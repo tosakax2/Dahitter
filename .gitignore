@@ -39,5 +39,6 @@ desktop.ini
 *.log
 
 # テンプレート画像
+captured_tiles/
 templates/mahjong_soul/*.png
 templates/riichi_city/*.png

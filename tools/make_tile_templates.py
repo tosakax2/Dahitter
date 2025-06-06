@@ -1,9 +1,16 @@
 """テンプレート画像を生成するツール"""
 
 import os
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+
 from src.dahitter.platform.window_info import find_game_window, get_client_rect
 from src.dahitter.vision.capture import capture_window
 from src.dahitter.vision.cropper import crop_my_hand_and_tsumo
+
+from ctypes import windll
+windll.shcore.SetProcessDpiAwareness(2)
 
 
 def main():
