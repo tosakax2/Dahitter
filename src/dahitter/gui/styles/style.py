@@ -1,7 +1,7 @@
 """GUI のスタイル定数を定義するモジュール"""
 
 from .themes import *
-from src.dahitter.config import ARROW_DOWN_PATH
+from src.dahitter.config import extract_temp_resource
 
 
 # ============================================================
@@ -77,7 +77,7 @@ STATUS_LABEL_STYLE = f"""
     color: {TEXT_PRIMARY_COLOR};
 """
 
-ARROW_DOWN_SVG = ARROW_DOWN_PATH.replace("\\", "/")
+ARROW_DOWN_SVG = extract_temp_resource("src/dahitter/icons/arrow_drop_down.svg")
 
 COMBOBOX_STYLE = f"""
     QComboBox {{

@@ -13,6 +13,7 @@ GAME_PROCESS_NAMES = {
 
 def find_game_window(game: str = "mahjong_soul") -> int:
     """指定ゲームのウィンドウハンドルを返す"""
+    
     target_name = GAME_PROCESS_NAMES.get(game)
     if not target_name:
         raise ValueError(f"未対応のゲーム指定: {game}")

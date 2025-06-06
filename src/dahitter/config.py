@@ -2,7 +2,20 @@
 
 import os
 import sys
+import tempfile
+import shutil
 
+def extract_temp_resource(relative_path: str) -> str:
+    """
+    PyInstaller/Nuitkaのパッケージ内リソースを一時パスに展開する
+    QtのQSSで `url(...)` を使いたい場合に必要
+    """
+    abs_path = resource_path(relative_path)
+    temp_dir = tempfile.gettempdir()
+    target_path = os.path.join(temp_dir, os.path.basename(relative_path))
+    if not os.path.exists(target_path):
+        shutil.copyfile(abs_path, target_path)
+    return target_path.replace("\\", "/")  # QSS用にスラッシュ統一
 
 def resource_path(relative_path: str) -> str:
     """ビルド環境に応じてリソースへのパスを返す"""
