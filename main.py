@@ -2,14 +2,17 @@
 
 import sys
 import traceback
-from src.dahitter.gui.main_window import MainWindow
-from PySide6.QtWidgets import QApplication
+import ctypes
 
 
 def main():
     """Qt アプリケーションを初期化してメインウィンドウを表示する"""
 
     try:
+        ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        from PySide6.QtWidgets import QApplication
+        from src.dahitter.gui.main_window import MainWindow
+
         app = QApplication(sys.argv)
         win = MainWindow()
         win.show()
