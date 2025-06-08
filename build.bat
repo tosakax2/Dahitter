@@ -75,8 +75,5 @@ echo.
 echo === Build completed (Nuitka + standalone) ===
 echo [Main Executable]:     dist\DahitterCore\Dahitter.exe
 echo [Capture Tool]:        dist\TileCaptureToolCore\TileCaptureTool.exe
-echo [Shortcuts]:
-echo    - dist\Dahitter.lnk
-echo    - dist\TileCaptureTool.lnk
 echo.
 pause
