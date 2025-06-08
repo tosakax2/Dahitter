@@ -3,8 +3,6 @@
 import sys
 import traceback
 import ctypes
-from src.dahitter.gui.main_window import MainWindow
-from PySide6.QtWidgets import QApplication
 
 
 def main():
@@ -12,6 +10,9 @@ def main():
 
     try:
         ctypes.windll.shcore.SetProcessDpiAwareness(2)
+        from PySide6.QtWidgets import QApplication
+        from src.dahitter.gui.main_window import MainWindow
+
         app = QApplication(sys.argv)
         win = MainWindow()
         win.show()
